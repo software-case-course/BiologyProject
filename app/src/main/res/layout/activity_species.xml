@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_above="@+id/textView">
+    </ScrollView>
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:text="能生存在xxx的生存环境中"
+        android:layout_gravity="center_vertical"
+        android:layout_above="@+id/buttonLayout"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView" />
+</RelativeLayout>
