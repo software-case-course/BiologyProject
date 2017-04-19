@@ -39,4 +39,38 @@
         android:layout_width="400sp"
         android:layout_height="wrap_content"
        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:text="有六条腿的种类"
+        android:id="@+id/sixlegs1"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:background="#0000FF"/>
+
+    <ImageView
+        android:src="@drawable/sixlegs"
+        android:id="@+id/sixlegs2"
+        android:scaleType="centerInside"
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:text="多于六条腿的种类"
+        android:id="@+id/morelegs1"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:background="#0000FF"/>
+
+    <ImageView
+        android:src="@drawable/morelegs"
+        android:id="@+id/morelegs2"
+        android:scaleType="centerInside"
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        />
 </LinearLayout>
