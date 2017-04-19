@@ -70,6 +70,22 @@ public class GridAdapter extends BaseAdapter{
             pictures.add(picture);
         }
     }
+    //构造方法
+    public GridAdapter(Context context,int id)
+    {
+        this.context=context;
+        pictures=new ArrayList<Picture>();
+        inflater = LayoutInflater.from(context);
+        //从数据库获取数据
+        GridViewDB gridViewDB=new GridViewDB();
+        String []title=gridViewDB.getTitles(id);
+        int []image=gridViewDB.getImages(id);
+
+        for (int i = 0; i < image.length; i++) {
+            Picture picture = new Picture(title[i], image[i]);
+            pictures.add(picture);
+        }
+    }
     //获得数量
     @Override
     public int getCount()

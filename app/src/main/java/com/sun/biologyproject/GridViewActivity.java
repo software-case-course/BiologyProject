@@ -16,19 +16,26 @@ import android.widget.GridView;
 public class GridViewActivity extends AppCompatActivity {
 
     private GridView choose_one;
+    private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_view);
 
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        String str=bundle.getString("id");
+        id=Integer.parseInt(str);
         choose_one=(GridView)findViewById(R.id.choose_grid);
         choose_one.setNumColumns(2);
-        choose_one.setAdapter(new GridAdapter(this));
+        choose_one.setAdapter(new GridAdapter(this,id));
         choose_one.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Log.d("Tag","position"+String.valueOf(position)+" id:"+String.valueOf(id));
-                startActivity(new Intent(GridViewActivity.this,SpeciesActivity.class));
+                Intent intent=new Intent(GridViewActivity.this,SpeciesActivity.class);
+                intent.putExtra("id",String.valueOf(id));
+                startActivity(intent);
             }
         });
     }

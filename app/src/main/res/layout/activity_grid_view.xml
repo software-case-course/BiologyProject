@@ -4,10 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="10dp"
     tools:context="com.sun.biologyproject.GridViewActivity">
 
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_change">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:text="选择其中一个"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
     <GridView
+        android:layout_below="@+id/title"
+        android:scrollbars="none"
         android:id="@+id/choose_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,8 +32,9 @@
         android:horizontalSpacing="10dp"
         android:stretchMode="columnWidth"
         android:gravity="center"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         >
 
     </GridView>

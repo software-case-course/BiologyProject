@@ -4,73 +4,79 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:weightSum="1">
-    android:weightSum="1">
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="25dp"
         android:text="有壳的种类"
         android:id="@+id/shell"
         android:gravity="center"
-        android:textSize="28sp"
+        android:textSize="20sp"
         android:textColor="#fff"
-        android:background="#0000FF"/>
+        android:background="@drawable/color_change"/>
 
     <ImageView
-        android:src="@drawable/shell"
-        android:id="@+id/shell1"
-        android:layout_width="wrap_content"
-        android:layout_height="130sp" />
+        android:src="@drawable/img_identification_shell"
+        android:id="@+id/list1"
+        android:layout_width="150sp"
+        android:layout_gravity="center"
+        android:layout_height="80sp"
+        android:onClick="onClick"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="25sp"
+        android:layout_marginTop="15dp"
         android:text="无腿像蠕虫的种类"
         android:id="@+id/worm"
         android:gravity="center"
-        android:textSize="28sp"
+        android:textSize="20sp"
         android:textColor="#fff"
-        android:background="#0000FF"/>
+        android:background="@drawable/color_change"/>
 
     <ImageView
         android:src="@drawable/worm1"
-        android:id="@+id/imageView4"
-        android:scaleType="centerInside"
-        android:layout_width="400sp"
-        android:layout_height="wrap_content"
-       />
+        android:id="@+id/list2"
+        android:layout_gravity="center"
+        android:layout_width="150sp"
+        android:layout_height="80sp"
+        android:onClick="onClick"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="25sp"
+        android:layout_marginTop="15dp"
         android:text="有六条腿的种类"
         android:id="@+id/sixlegs1"
         android:gravity="center"
-        android:textSize="28sp"
+        android:textSize="20sp"
         android:textColor="#fff"
-        android:background="#0000FF"/>
+        android:background="@drawable/color_change"
+        android:onClick="onClick"/>
 
     <ImageView
         android:src="@drawable/sixlegs"
-        android:id="@+id/sixlegs2"
-        android:scaleType="centerInside"
-        android:layout_width="400sp"
-        android:layout_height="wrap_content"
-        />
+        android:id="@+id/list3"
+        android:layout_gravity="center"
+        android:layout_width="150sp"
+        android:layout_height="80sp"
+        android:onClick="onClick"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="25sp"
+        android:layout_marginTop="15dp"
         android:text="多于六条腿的种类"
         android:id="@+id/morelegs1"
         android:gravity="center"
-        android:textSize="28sp"
+        android:textSize="20sp"
         android:textColor="#fff"
-        android:background="#0000FF"/>
+        android:background="@drawable/color_change"
+        android:onClick="onClick"/>
 
     <ImageView
         android:src="@drawable/morelegs"
-        android:id="@+id/morelegs2"
-        android:scaleType="centerInside"
-        android:layout_width="400sp"
-        android:layout_height="wrap_content"
-        />
+        android:id="@+id/list4"
+        android:layout_gravity="center"
+        android:layout_width="150sp"
+        android:layout_height="80sp"
+        android:onClick="onClick"/>
 </LinearLayout>
