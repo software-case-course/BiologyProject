@@ -34,4 +34,16 @@ tools:context="com.sun.biologyproject.CollectCrittersActivity">
         android:src="@drawable/ic_help"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"/>
+    <Button
+        android:id="@+id/bt_go_to_collect"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_collected_blue_strip"
+        android:text="前往鉴别水生生物"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:visibility="invisible"/>
 </RelativeLayout>
