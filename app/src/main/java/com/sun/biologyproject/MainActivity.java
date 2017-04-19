@@ -25,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+
+        collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CollectCrittersActivity.class);
+                startActivity(intent);
+            }
+        });
         identify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
