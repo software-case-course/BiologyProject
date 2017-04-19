@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    android:weightSum="1">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:text="有壳的种类"
+        android:id="@+id/shell"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:background="#0000FF"/>
+
+    <ImageView
+        android:src="@drawable/shell"
+        android:id="@+id/shell1"
+        android:layout_width="wrap_content"
+        android:layout_height="130sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:text="无腿像蠕虫的种类"
+        android:id="@+id/worm"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:background="#0000FF"/>
+
+    <ImageView
+        android:src="@drawable/worm1"
+        android:id="@+id/imageView4"
+        android:scaleType="centerInside"
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+       />
+</LinearLayout>

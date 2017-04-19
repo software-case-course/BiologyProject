@@ -18,10 +18,17 @@ public class MainActivity extends AppCompatActivity {
         collect=(Button)findViewById(R.id.collect_button);
         identify=(Button)findViewById(R.id.identify_button);
 
-        identify.setOnClickListener(new View.OnClickListener() {
+        /*identify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,GridViewActivity.class);
+                startActivity(intent);
+            }
+        });*/
+        identify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,actvitysecond.class);
                 startActivity(intent);
             }
         });
