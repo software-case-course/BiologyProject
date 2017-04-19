@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+/**
+ * 梁雨宜 2017/4/19
+ * 启动显示GridView的Activity
+ */
+
 public class GridViewActivity extends AppCompatActivity {
 
     private GridView choose_one;
@@ -19,7 +24,6 @@ public class GridViewActivity extends AppCompatActivity {
         choose_one=(GridView)findViewById(R.id.choose_grid);
         choose_one.setNumColumns(2);
         choose_one.setAdapter(new GridAdapter(this));
-        //startActivity(new Intent(GridViewActivity.this,SpeciesActivity.class));
         choose_one.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
