@@ -79,7 +79,7 @@ public class CollectCrittersActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                tv_title.setText(titleList.get(position));
+                tv_title.setText((position+1)+"."+titleList.get(position));
             }
 
             @Override
@@ -89,6 +89,6 @@ public class CollectCrittersActivity extends AppCompatActivity {
         });
 
         tv_title = (TextView) findViewById(R.id.tv_title);
-        tv_title.setText(titleList.get(0));
+        tv_title.setText(1+"."+titleList.get(0));
     }
 }
