@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import cn.bmob.v3.Bmob;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button collect;
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bmob.initialize(this, "f99ed8e9be1e3e153a970b88d11a1fa6");
         setContentView(R.layout.activity_main);
 
         title_text=(TextView)findViewById(R.id.titleText);
