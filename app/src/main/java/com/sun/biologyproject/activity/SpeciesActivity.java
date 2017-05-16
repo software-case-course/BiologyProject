@@ -1,7 +1,9 @@
-package com.sun.biologyproject;
+package com.sun.biologyproject.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.sun.biologyproject.R;
 
 public class SpeciesActivity extends AppCompatActivity {
 

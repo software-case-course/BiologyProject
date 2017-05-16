@@ -1,4 +1,6 @@
-package com.sun.biologyproject;
+package com.sun.biologyproject.bean;
+
+import com.sun.biologyproject.R;
 
 import java.util.ArrayList;
 import java.util.List;

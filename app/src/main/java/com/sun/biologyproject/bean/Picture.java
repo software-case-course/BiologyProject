@@ -1,4 +1,4 @@
-package com.sun.biologyproject;
+package com.sun.biologyproject.bean;
 
 /**
  * Created by liangyuyi梁雨宜 on 2017/4/19.

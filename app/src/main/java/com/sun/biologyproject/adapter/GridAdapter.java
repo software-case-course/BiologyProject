@@ -1,13 +1,16 @@
-package com.sun.biologyproject;
+package com.sun.biologyproject.adapter;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.sun.biologyproject.bean.GridViewDB;
+import com.sun.biologyproject.bean.Picture;
+import com.sun.biologyproject.R;
 
 import java.util.ArrayList;
 import java.util.List;

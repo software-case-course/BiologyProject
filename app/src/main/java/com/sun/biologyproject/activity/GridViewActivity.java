@@ -1,12 +1,14 @@
-package com.sun.biologyproject;
+package com.sun.biologyproject.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+
+import com.sun.biologyproject.R;
+import com.sun.biologyproject.adapter.GridAdapter;
 
 /**
  * 梁雨宜 2017/4/19

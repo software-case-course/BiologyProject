@@ -1,4 +1,4 @@
-package com.sun.biologyproject;
+package com.sun.biologyproject.adapter;
 
 import android.content.Context;
 import android.content.Intent;

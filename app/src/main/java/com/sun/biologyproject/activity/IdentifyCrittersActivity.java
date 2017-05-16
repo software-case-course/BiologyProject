@@ -1,23 +1,24 @@
-package com.sun.biologyproject;
+package com.sun.biologyproject.activity;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sun.biologyproject.R;
+
 /**
+ * 识别水生生物的activity
  * Created by everlov3 on 2017/4/19.
  */
 
-public class actvitysecond extends Activity{
+public class IdentifyCrittersActivity extends Activity{
     private TextView title_text;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.actvitysecond);
+        setContentView(R.layout.activity_indentify_critters);
 
         title_text=(TextView)findViewById(R.id.titleText);
         title_text.setText("识别水生生物");
@@ -55,7 +56,7 @@ public class actvitysecond extends Activity{
                 break;
         }
 
-        Intent intent=new Intent(actvitysecond.this,GridViewActivity.class);
+        Intent intent=new Intent(IdentifyCrittersActivity.this,GridViewActivity.class);
         intent.putExtra("id",String.valueOf(id));
         startActivity(intent);
     }

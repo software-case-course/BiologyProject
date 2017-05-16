@@ -1,4 +1,4 @@
-package com.sun.biologyproject;
+package com.sun.biologyproject.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.sun.biologyproject.R;
 
 import cn.bmob.v3.Bmob;
 
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         identify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,actvitysecond.class);
+                Intent intent=new Intent(MainActivity.this,IdentifyCrittersActivity.class);
                 startActivity(intent);
             }
         });
