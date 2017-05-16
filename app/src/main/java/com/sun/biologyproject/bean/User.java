@@ -1,11 +1,11 @@
 package com.sun.biologyproject.bean;
 
-import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobUser;
 
 /**
  * Created by SUN on 2017/5/17.
  */
-public class User extends BmobObject {
+public class User extends BmobUser {
     private String userPhone;
     private String userName;
     private String password;
