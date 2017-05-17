@@ -69,29 +69,6 @@ public class ShareUtils {
         return value;
     }
 
-    /**
-     * 获取保存的当前的用户
-     * @param context
-     * @throws Exception
-     * @return
-     */
-    public static User getCurrentUser(Context context){
-        User user = new User();
-        user.setUserPhone(readString(context, USER_PHONE, ""));
-        user.setUserName(readString(context, USER_NAME, ""));
-        return user;
-    }
-
-    /**
-     * 保存当前用户的账号
-     * @param context
-     * @param user
-     * @return
-     */
-    public static void saveCurrentUser(Context context, User user){
-        writeString(context, user.getUserPhone(), USER_PHONE);
-        writeString(context, user.getUserName(), USER_NAME);
-    }
 
     /**
      * 保存最后一次登录的用户的手机号码
@@ -109,16 +86,6 @@ public class ShareUtils {
      */
     public static String getLastLoginUserPhone(Context context){
         return readString(context, LAST_USER_PHONE, "");
-    }
-
-    /**
-     * 删除当前用户账号
-     * @param context
-     * @return
-     */
-    public static void signOutCurrentUser(Context context){
-        User user = new User();
-        saveCurrentUser(context, user);
     }
 
     public static void writeMyTools(Context context, String tools){

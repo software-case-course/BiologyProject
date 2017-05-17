@@ -16,12 +16,16 @@ public class MainActivity extends AppCompatActivity {
     private Button collect;
     private Button identify;
     private TextView title_text;
+    private Button btn_setting;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bmob.initialize(this, "f99ed8e9be1e3e153a970b88d11a1fa6");
         setContentView(R.layout.activity_main);
+        initView();
+    }
 
+    private void initView(){
         title_text=(TextView)findViewById(R.id.titleText);
         title_text.setText("水生生物识别");
 
@@ -40,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,CollectCrittersActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btn_setting = (Button) findViewById(R.id.btn_setting);
+        btn_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

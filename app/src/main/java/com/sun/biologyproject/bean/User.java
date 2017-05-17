@@ -6,33 +6,14 @@ import cn.bmob.v3.BmobUser;
  * Created by SUN on 2017/5/17.
  */
 public class User extends BmobUser {
-    private String userPhone;
-    private String userName;
-    private String password;
 
-    public String getPassword() {
-        return password;
+    private String nickName;
+
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
-
-
-    public String getUserPhone() {
-        return userPhone;
-    }
-
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
 }
