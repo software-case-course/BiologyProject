@@ -7,10 +7,17 @@
 
     <include layout="@layout/title_layout"/>
     <TextView
+        android:layout_marginTop="50dp"
+        android:textSize="15dp"
+        android:id="@+id/locationText"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+    <TextView
         android:id="@+id/CrittersText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_below="@+id/locationText"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="35dp"
@@ -18,7 +25,8 @@
     <ImageView
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_below="@+id/locationText"
+        android:layout_marginTop="20dp"
         android:layout_alignRight="@+id/CrittersText"
         android:layout_marginRight="16dp"
         android:src="@drawable/ic_help"/>
