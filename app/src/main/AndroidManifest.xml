@@ -30,6 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.ReportActivity"/>
         <activity android:name=".activity.GridViewActivity" />
         <activity android:name=".activity.SpeciesActivity" />
         <activity android:name=".activity.IdentifyCrittersActivity" />
