@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
     private Button identify;
     private TextView title_text;
     private Button btn_setting;
+    private Button TTools;
 
     //与定位有关的参数
     private AMapLocationClient locationClient = null;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
 
         collect=(Button)findViewById(R.id.collect_button);
         identify=(Button)findViewById(R.id.identify_button);
+        TTools = (Button)findViewById(R.id.TTools_button);
 
         identify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +72,13 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,CollectCrittersActivity.class);
+                startActivity(intent);
+            }
+        });
+        TTools.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this,ToolsActivity.class);
                 startActivity(intent);
             }
         });
