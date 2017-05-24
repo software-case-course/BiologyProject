@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sun.biologyproject.activity.SpeciesActivity">
+
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_alignParentBottom="true"
@@ -13,33 +16,30 @@
             android:id="@+id/toreport"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/scrollView"
-        android:layout_above="@+id/textView"
-        android:scrollbars="vertical"> 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-            <ImageView
-            android:layout_width="375dp"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/shell"
-            android:layout_gravity="center_horizontal"/>
-            <ImageView
-                android:layout_width="375dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/worm1" />
-        </LinearLayout>
-    </ScrollView>
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="35dp"
-        android:text="能生存在xxx的生存环境中"
-        android:layout_gravity="center_vertical"
-        android:layout_above="@+id/buttonLayout"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+            android:text="能生存在xxx的生存环境中"
+            android:layout_above="@+id/buttonLayout"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textView" />
+    </LinearLayout>
+    <GridView
+        android:layout_below="@+id/title"
+        android:scrollbars="none"
+        android:id="@+id/choose_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="180dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        >
+    </GridView>
 </RelativeLayout>

@@ -44,8 +44,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="搜集"
-        android:id="@+id/collect_button" />
+        android:text="工具"
+        android:id="@+id/TTools_button" />
+    <Button
+        android:id="@+id/collect_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_below="@+id/TTools_button"
+        android:text="收集"/>
     <Button
         android:id="@+id/identify_button"
         android:layout_width="match_parent"

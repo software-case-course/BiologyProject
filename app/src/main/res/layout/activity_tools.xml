@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayoutLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.sun.biologyproject.activity.ToolsActivity">
 
-</RelativeLayout>
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="你所选择的工具有"
+        />
+    <CheckBox
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网"
+        android:id="@+id/net"
+        />
+    <CheckBox
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:text="水桶"
+        android:id="@+id/bucket"
+        />
+    <CheckBox
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:text="杯子"
+        android:id="@+id/cup"
+        />
+    <CheckBox
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:text="箱子"
+        android:id="@+id/box"
+        />
+    <CheckBox
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手套"
+        android:id="@+id/gloves"
+        />
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:id="@+id/tv"
+        />
+</LinearLayoutLayout>
