@@ -45,14 +45,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="工具"
-        android:id="@+id/TTools_button" />
+        android:id="@+id/gongju_button" />
     <Button
         android:id="@+id/collect_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_below="@+id/TTools_button"
+        android:layout_below="@+id/gongju_button"
         android:text="收集"/>
     <Button
         android:id="@+id/identify_button"

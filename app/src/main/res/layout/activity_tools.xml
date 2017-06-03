@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayoutLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.sun.biologyproject.activity.ToolsActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width = "wrap_content"
+        android:layout_width = "fill_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:text="你所选择的工具有"
         />
     <CheckBox
-        android:layout_width = "wrap_content"
+        android:layout_width = "fill_parent"
         android:layout_height="wrap_content"
         android:text="网"
         android:id="@+id/net"
         />
     <CheckBox
-        android:layout_width = "wrap_content"
+        android:layout_width = "fill_parent"
         android:layout_height="wrap_content"
         android:text="水桶"
         android:id="@+id/bucket"
         />
     <CheckBox
-        android:layout_width = "wrap_content"
+        android:layout_width = "fill_parent"
         android:layout_height="wrap_content"
         android:text="杯子"
         android:id="@+id/cup"
         />
     <CheckBox
-        android:layout_width = "wrap_content"
+        android:layout_width = "fill_parent"
         android:layout_height="wrap_content"
         android:text="箱子"
         android:id="@+id/box"
         />
     <CheckBox
-        android:layout_width = "wrap_content"
+        android:layout_width = "fill_parent"
         android:layout_height="wrap_content"
         android:text="手套"
         android:id="@+id/gloves"
         />
-    <TextView
-        android:layout_width = "wrap_content"
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:id="@+id/tv"
+        android:layout_gravity="center"
+        android:text="提交信息"
         />
-</LinearLayoutLayout>
+</LinearLayout>

@@ -13,16 +13,23 @@ import com.sun.biologyproject.adapter.GridAdapter;
 
 public class SpeciesActivity extends AppCompatActivity {
 
-
-
+    private GridView show_one;
+    private int id;
     @Override
 protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_species);
 
-        initView();
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String str = bundle.getString("id");
+        id = Integer.parseInt(str);
+        show_one = (GridView)findViewById(R.id.show_grid);
+        show_one.setNumColumns(1);
+        show_one.setAdapter(new GridAdapter(this,id));
 
+        initView();
 
     }
     private void initView()
