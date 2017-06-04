@@ -39,7 +39,7 @@ public class GridViewActivity extends AppCompatActivity {
                 //Log.d("Tag","position"+String.valueOf(position)+" id:"+String.valueOf(id));
                 //Toast.makeText(GridViewActivity.this,"position"+String.valueOf(position)+" id:"+String.valueOf(id),Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(GridViewActivity.this,SpeciesActivity.class);
-                intent.putExtra("id",String.valueOf(id));
+                intent.putExtra("position",String.valueOf(position));
                 startActivity(intent);
             }
         });

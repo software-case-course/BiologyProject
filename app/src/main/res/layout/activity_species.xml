@@ -9,11 +9,11 @@
 
     <GridView
         android:layout_below="@+id/title"
-        android:scrollbars="none"
+        android:fadeScrollbars="true"
         android:id="@+id/show_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnWidth="180dp"
+        android:columnWidth="90dp"
         android:numColumns="auto_fit"
         android:verticalSpacing="10dp"
         android:horizontalSpacing="10dp"
