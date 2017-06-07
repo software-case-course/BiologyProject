@@ -7,13 +7,15 @@ import java.util.List;
 
 /**
  * Created by liangyuyi 梁雨宜on 2017/4/19.
- * GridView的各个模块的图片的路径和
+ * GridView的各个模块的图片的路径和图片名称
  */
-public class GridViewDB {
+public class GridViewDB {//使用单例模式，避免类被重复创建，消耗系统时间
     private List<int []>images;
     private List<String []>titles;
 
-    public GridViewDB()
+    private static GridViewDB instance=new GridViewDB();//类句柄
+
+    private GridViewDB()//避免类直接new一个对象
     {
         images=new ArrayList<int []>();
         titles=new ArrayList<String[]>();
@@ -25,20 +27,25 @@ public class GridViewDB {
         titles.add(titles1);
         titles.add(titles3);
     }
+
+    public static GridViewDB getInstance(){//创建对象时只能通过 GridViewDB gv=GridViewDB.getInstance()的方式
+        return instance;
+    }
+
     public int [] getImages(int id)
     {
-        if(id==4){
+        if(id==3){
             return images.get(2);
         }
-        return images.get(id-1);
+        return images.get(id);
     }
 
     public String [] getTitles(int id)
     {
-        if(id==4){
+        if(id==3){
             return titles.get(2);
         }
-        return titles.get(id-1);
+        return titles.get(id);
     }
 
     //图片id数组
@@ -75,4 +82,16 @@ public class GridViewDB {
     private String[]titles3=new String[]{
             "飞毛腿","小龙虾","鱼蛉"," 鼠妇"
     };
+
+    /**
+     * 获取图片的接口
+     * @param i 大类选择的id
+     * @param y 小类选择的id
+     * @return 图片的地址
+     */
+    public int getPictureId(int i,int y){
+        int []a=images.get(i);
+        return a[y];
+    }
+
 }

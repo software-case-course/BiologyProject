@@ -21,6 +21,7 @@ public class GridViewActivity extends AppCompatActivity {
 
     private GridView choose_one;
     private int id;
+    private String str;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class GridViewActivity extends AppCompatActivity {
 
         Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
-        String str=bundle.getString("id");
+        str=bundle.getString("id");
         id=Integer.parseInt(str);
         choose_one=(GridView)findViewById(R.id.choose_grid);
         choose_one.setNumColumns(2);
@@ -39,7 +40,8 @@ public class GridViewActivity extends AppCompatActivity {
                 //Log.d("Tag","position"+String.valueOf(position)+" id:"+String.valueOf(id));
                 //Toast.makeText(GridViewActivity.this,"position"+String.valueOf(position)+" id:"+String.valueOf(id),Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(GridViewActivity.this,SpeciesActivity.class);
-                intent.putExtra("position",String.valueOf(position));
+                intent.putExtra("firstId",str);
+                intent.putExtra("secondId",String.valueOf(position));
                 startActivity(intent);
             }
         });

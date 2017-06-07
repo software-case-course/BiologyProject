@@ -80,7 +80,7 @@ public class GridAdapter extends BaseAdapter{
         pictures=new ArrayList<Picture>();
         inflater = LayoutInflater.from(context);
         //从数据库获取数据
-        GridViewDB gridViewDB=new GridViewDB();
+        GridViewDB gridViewDB=GridViewDB.getInstance();
         String []title=gridViewDB.getTitles(id);
         int []image=gridViewDB.getImages(id);
 

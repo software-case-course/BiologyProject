@@ -35,12 +35,12 @@ public class IdentifyCrittersActivity extends Activity{
             //有壳类
             case R.id.shell:
             case R.id.list1:
-                id=1;
+                id=0;
                 break;
             //蠕虫类
             case R.id.worm:
             case R.id.list2:
-                id=2;
+                id=1;
                 break;
             //六条腿
             case R.id.sixlegs1:
@@ -49,7 +49,7 @@ public class IdentifyCrittersActivity extends Activity{
             //超过六条腿
             case R.id.morelegs1:
             case R.id.list4:
-                id=4;
+                id=3;
                 break;
             default:
                 Toast.makeText(this,"system error",Toast.LENGTH_SHORT).show();
