@@ -1,9 +1,22 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'BiologyProject'
+            keyPassword 'android'
+            storeFile file('./biology_key.jks')
+            storePassword 'android'
+        }
+        release {
+            keyAlias 'BiologyProject'
+            keyPassword 'android'
+            storeFile file('./biology_key.jks')
+            storePassword 'android'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "24.0.3"
-
     defaultConfig {
         applicationId "com.sun.biologyproject"
         minSdkVersion 19
@@ -20,8 +33,6 @@ android {
     sourceSets {
         main.jniLibs.srcDirs = ['libs']
     }
-
-
 }
 
 dependencies {
