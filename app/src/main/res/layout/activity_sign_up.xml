@@ -3,65 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/black"
+    android:background="@drawable/background_blue_sky"
     tools:context="com.sun.biologyproject.activity.SignUpActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/title_margin_top">
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="@dimen/back_img_width"
             android:layout_height="@dimen/back_img_height"
             android:src="@drawable/back_white"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/title_margin_top"
             />
-
-        <RelativeLayout
-            android:id="@+id/rl_title"
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/activity_vertical_margin">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sign_up"
-                android:textSize="30sp"
-                android:textColor="@android:color/white"
-                android:layout_toRightOf="@+id/imageView"
-                android:layout_centerVertical="true"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"/>
-        </RelativeLayout>
+            android:layout_marginTop="@dimen/title_margin_top"/>
 
         <RelativeLayout
-        android:id="@+id/rl_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rl_title"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin">
-        <ImageView
-            android:layout_width="@dimen/edit_drawable_height"
-            android:layout_height="@dimen/edit_drawable_height"
-            android:src="@drawable/account_white"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
-        <EditText
-            android:id="@+id/et_account"
+            android:id="@+id/rl_account"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/sign_up_account_hint"
-            android:textColorHint="@android:color/white"
-            android:textColor="@android:color/white"
-            android:paddingLeft="60dp"
-            android:background="@drawable/bg_edit_text"
-            android:textCursorDrawable="@drawable/color_cursor"
-            android:singleLine="true"/>
-    </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_back"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="60dp">
+            <ImageView
+                android:layout_width="@dimen/edit_drawable_height"
+                android:layout_height="@dimen/edit_drawable_height"
+                android:src="@drawable/account_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+            <EditText
+                android:id="@+id/et_account"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/sign_up_account_hint"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/white"
+                android:paddingLeft="60dp"
+                android:background="@drawable/bg_edit_text"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:singleLine="true"/>
+        </RelativeLayout>
         <TextView
             android:id="@+id/tv_account_tip"
             android:layout_width="wrap_content"

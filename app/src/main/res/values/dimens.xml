@@ -3,6 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="title_margin_top">20dp</dimen>
+
     <dimen name="login_logo_width">50dp</dimen>
     <dimen name="edit_drawable_height">20dp</dimen>
     <dimen name="shape_radius">50dp</dimen>
