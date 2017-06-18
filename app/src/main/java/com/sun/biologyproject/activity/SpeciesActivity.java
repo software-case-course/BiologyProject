@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.sun.biologyproject.R;
 import com.sun.biologyproject.adapter.GridAdapter;
+import com.sun.biologyproject.adapter.ShowAdapter;
 import com.sun.biologyproject.bean.GridViewDB;
 
 public class SpeciesActivity extends AppCompatActivity {
@@ -24,9 +25,9 @@ public class SpeciesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_species);
-        setContentView(R.layout.test_layout);
-        imageView=(ImageView)findViewById(R.id.test_pic);
+        setContentView(R.layout.activity_species);
+       // setContentView(R.layout.test_layout);
+        show_one=(GridView)findViewById(R.id.show_grid);
 
         //获取GridViewActivity 中的数据
         Intent intent = getIntent();
@@ -37,12 +38,12 @@ public class SpeciesActivity extends AppCompatActivity {
         secondId=Integer.parseInt(SecondId);
 
         GridViewDB gridViewDB=GridViewDB.getInstance();//获取DB对象
-        imageView.setImageResource(gridViewDB.getPictureId(firstId,secondId));//gridViewDB.getPictureId(firstId,secondId)获取图片的id
+        //imageView.setImageResource(gridViewDB.getPictureId(firstId,secondId));//gridViewDB.getPictureId(firstId,secondId)获取图片的id
 
         //num = Integer.parseInt(str);
 //        show_one = (GridView)findViewById(R.id.show_grid);
-//        show_one.setNumColumns(1);
-//        show_one.setAdapter(new GridAdapter(this,num));
+        show_one.setNumColumns(1);
+        show_one.setAdapter(new ShowAdapter(this,firstId,secondId));
 
 //        initView();
 
