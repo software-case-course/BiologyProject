@@ -45,7 +45,7 @@ public class SpeciesActivity extends AppCompatActivity {
         show_one.setNumColumns(1);
         show_one.setAdapter(new ShowAdapter(this,firstId,secondId));
 
-//        initView();
+        initView();
 
     }
     private void initView()
