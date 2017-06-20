@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sun.biologyproject.R;
+import com.sun.biologyproject.utils.ShareUtils;
 
 public class ToolsActivity extends Activity  {
 
@@ -94,27 +95,50 @@ public class ToolsActivity extends Activity  {
             @Override
             public void onClick(View v){
                 int num = 0;
+                int sign1 = 0, sign2 = 0,sign3 = 0, sign4 = 0, sign5 = 0;
                 if(net.isChecked())
                 {
                     num++;
+                    sign1 = 1;
                 }
                 if(bucket.isChecked())
                 {
                     num++;
+                    sign2 = 1;
                 }
                 if(cup.isChecked())
                 {
                     num++;
+                    sign3 = 1;
                 }
                 if(box.isChecked())
                 {
                     num++;
+                    sign4 = 1;
                 }
                 if(gloves.isChecked())
                 {
                     num++;
+                    sign5 = 1;
                 }
                 DisplayToast("您一共选择了"+num+"样工具");
+                StringBuffer stringBuffer = new StringBuffer();
+                if( sign1 == 1){
+                    stringBuffer.append("网,");
+                }
+                if( sign2 == 1){
+                    stringBuffer.append("水桶,");
+                }
+                if( sign3 == 1){
+                    stringBuffer.append("杯子,");
+                }
+                if( sign4 == 1){
+                    stringBuffer.append("箱子,");
+                }
+                if( sign5 == 1){
+                    stringBuffer.append("手套");
+                }
+                ShareUtils.writeMyTools(ToolsActivity.this, stringBuffer.toString());
             }
         });
 
