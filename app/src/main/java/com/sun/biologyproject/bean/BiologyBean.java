@@ -1,25 +1,13 @@
 package com.sun.biologyproject.bean;
 
-import cn.bmob.v3.BmobObject;
-import cn.bmob.v3.datatype.BmobFile;
-
 /**
- * Created by SUN on 2017/6/20.
+ * Created by SUN on 2017/6/21.
  */
-public class BiologyBean extends BmobObject {
+public class BiologyBean {
 
-    private String id;
-    private String name;//水生生物
-    private String imgUrl;//图片的Url
-    private BmobFile file;//图片
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String name;//生物名字
+    private String id;//对应的Id
+    private Integer score;//水质量的评分系数
 
     public String getName() {
         return name;
@@ -29,20 +17,20 @@ public class BiologyBean extends BmobObject {
         this.name = name;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getId() {
+        return id;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public BmobFile getFile() {
-        return file;
+    public Integer getScore() {
+        return score;
     }
 
-    public void setFile(BmobFile file) {
-        this.file = file;
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
 }
