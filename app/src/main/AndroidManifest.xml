@@ -16,6 +16,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--允许程序打开网络套接字-->
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- 获取sd卡写的权限，用于文件上传和下载 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
@@ -55,6 +57,7 @@
         <activity android:name=".activity.ToolsActivity" />
         <activity android:name=".activity.ReportActivity" />
         <activity android:name=".activity.NavigationActivity"></activity>
+        <activity android:name=".activity.ShowMapActivity"/>
     </application>
 
 </manifest>
