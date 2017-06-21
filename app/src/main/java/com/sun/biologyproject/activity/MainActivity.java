@@ -92,6 +92,13 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
                 finish();
             }
         });
+        localText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,ShowMapActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
