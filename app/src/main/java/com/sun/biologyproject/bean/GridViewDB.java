@@ -21,6 +21,7 @@ public class GridViewDB {//使用单例模式，避免类被重复创建，消�
         titles=new ArrayList<String[]>();
         images.add(images0);
         images.add(images1);
+        images.add(images2);
         images.add(images3);
 
         titles.add(titles0);
@@ -34,17 +35,11 @@ public class GridViewDB {//使用单例模式，避免类被重复创建，消�
 
     public int [] getImages(int id)
     {
-        if(id==3){
-            return images.get(2);
-        }
         return images.get(id);
     }
 
     public String [] getTitles(int id)
     {
-        if(id==3){
-            return titles.get(2);
-        }
         return titles.get(id);
     }
 
@@ -67,6 +62,23 @@ public class GridViewDB {//使用单例模式，避免类被重复创建，消�
             R.mipmap.img_identification_worm8_thumb,
             R.mipmap.img_identification_worm9_thumb
     };
+    private int[] images2 = new int[]{
+            R.drawable.p3_1_1,
+            R.drawable.p3_1_2,
+            R.drawable.p3_2_1,
+            R.drawable.p3_2_2,
+            R.drawable.p3_2_3,
+            R.drawable.p3_2_4,
+            R.drawable.p3_2_5,
+            R.drawable.p3_2_6,
+            R.drawable.p3_3_1,
+            R.drawable.p3_4_1,
+            R.drawable.p3_4_2,
+            R.drawable.p3_4_3,
+            R.drawable.p3_4_4,
+            R.drawable.p3_4_5,
+            R.drawable.p3_4_6
+    };
     private int[] images3=new int[]{
             R.mipmap.img_identification_more_than_six_legs2_thumb,
             R.mipmap.img_identification_more_than_six_legs3_thumb,
@@ -78,6 +90,9 @@ public class GridViewDB {//使用单例模式，避免类被重复创建，消�
             { "袋状螺", "扁泥甲若虫", "蛤蚌或河蚌", "棱角螺", "有壳石蛾"};
     private String[]titles1=new String[]{
             "水生蠕虫","蠓幼虫","大蚊幼虫","蚋幼虫","水蛭","长角泥甲幼虫","午虻幼虫","涡虫","蚊子幼虫"
+    };
+    private String[]titles2 = new String[]{
+            "成年甲虫", "水钱", "", "", "", ""
     };
     private String[]titles3=new String[]{
             "飞毛腿","小龙虾","鱼蛉"," 鼠妇"
