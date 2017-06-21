@@ -19,6 +19,7 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.sun.biologyproject.R;
+import com.sun.biologyproject.bean.Adress;
 import com.sun.biologyproject.utils.Utils;
 
 import java.security.MessageDigest;
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
                         //textView.setText("地址：" + strMsg[0] + "\n" + "经    度：" + strMsg[1] + "\n" + "纬    度：" + strMsg[1]);
                         locationString=strMsg[0];
                         localText.setText("地址："+locationString);
+                        Adress.getAdressInstance().setAdress(locationString);
                     } catch (Exception e) {
                         Toast.makeText(MainActivity.this, "定位失败", Toast.LENGTH_LONG).show();
                     }
