@@ -1,5 +1,6 @@
 package com.sun.biologyproject.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextView tv_go_login;
     private TextView tv_account_tip;
     private TextView tv_password_tip;
+
+    private ProgressDialog mProgtessDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,15 +76,26 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        mProgtessDialog = new ProgressDialog(this);
+        mProgtessDialog.setTitle(null);
+        mProgtessDialog.setMessage(getString(R.string.logining));
+        mProgtessDialog.setCancelable(false);
+
     }
 
     private void onLogin(){
+        if (!mProgtessDialog.isShowing()){
+            mProgtessDialog.show();
+        }
+
         User user = new User();
         user.setUsername(getAccount());
         user.setPassword(getPassword());
         user.login(new SaveListener<User>() {
             @Override
             public void done(User user, BmobException e) {
+                mProgtessDialog.cancel();
                 if (e == null){
                     ToastUtils.showShortToast(LoginActivity.this, "登录成功");
                     ShareUtils.saveLastLoginUserPhone(LoginActivity.this, user.getMobilePhoneNumber());

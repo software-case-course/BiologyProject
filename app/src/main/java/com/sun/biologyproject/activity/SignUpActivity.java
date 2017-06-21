@@ -1,5 +1,6 @@
 package com.sun.biologyproject.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,6 +49,8 @@ public class SignUpActivity extends AppCompatActivity {
     private TextView tv_confirm_password_tip;
     private Button btn_sign_up;
 
+    private ProgressDialog mProgressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +92,12 @@ public class SignUpActivity extends AppCompatActivity {
                 onSignUp();
             }
         });
+
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setTitle(null);
+        mProgressDialog.setMessage(getString(R.string.signUping));
+        mProgressDialog.setCancelable(false);
+
     }
 
     @Override
@@ -106,7 +115,15 @@ public class SignUpActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * 注册操作
+     */
     private void onSignUp(){
+
+        if (!mProgressDialog.isShowing()){
+            mProgressDialog.show();
+        }
+
         String account = et_account.getText().toString().trim();
         String userName = et_userName.getText().toString().trim();
         String password = et_password.getText().toString().trim();
@@ -118,6 +135,9 @@ public class SignUpActivity extends AppCompatActivity {
         user.signUp(new SaveListener<User>() {
             @Override
             public void done(User user, BmobException e) {
+
+                mProgressDialog.cancel();
+
                 if (e == null){
                     Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                     ShareUtils.saveLastLoginUserPhone(SignUpActivity.this, user.getMobilePhoneNumber());
@@ -125,7 +145,7 @@ public class SignUpActivity extends AppCompatActivity {
                     finish();
                 }else {
                     Log.d(tag, "注册失败！" + e.toString());
-                    if (e.getErrorCode() == 209){
+                    if (e.getErrorCode() == 202){
                         ToastUtils.showShortToast(SignUpActivity.this, "注册失败！账号已存在");
                     }else {
                         ToastUtils.showShortToast(SignUpActivity.this, "注册失败:"+ e.toString());

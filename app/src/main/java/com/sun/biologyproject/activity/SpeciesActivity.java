@@ -34,6 +34,8 @@ public class SpeciesActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         String FirstId = bundle.getString("firstId");
         String SecondId=bundle.getString("secondId");
+        Log.d(getClass().getSimpleName(), "firstId：" + FirstId);
+        Log.d(getClass().getSimpleName(), "secondId：" + SecondId);
         firstId=Integer.parseInt(FirstId);
         secondId=Integer.parseInt(SecondId);
 
