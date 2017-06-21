@@ -2,11 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <com.amap.api.maps2d.MapView
 
         android:id="@+id/show_map"
 
         android:layout_width="match_parent"
 
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight = "12"/>
+
+    <TextView
+        android:id="@+id/text_adress"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight = "1"
+        android:gravity="center|left"
+        android:layout_marginLeft="5dp"
+        android:textSize="18dp"/>
+
 </LinearLayout>

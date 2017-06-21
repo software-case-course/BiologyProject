@@ -1,7 +1,10 @@
 package com.sun.biologyproject.activity;
 
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -14,13 +17,22 @@ import com.amap.api.maps2d.MapView;
 import com.amap.api.maps2d.UiSettings;
 import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.LatLng;
+import com.amap.api.maps2d.model.Marker;
+import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.MyLocationStyle;
+import com.amap.api.services.core.LatLonPoint;
+import com.amap.api.services.geocoder.GeocodeResult;
+import com.amap.api.services.geocoder.GeocodeSearch;
+import com.amap.api.services.geocoder.RegeocodeAddress;
+import com.amap.api.services.geocoder.RegeocodeQuery;
+import com.amap.api.services.geocoder.RegeocodeResult;
 import com.sun.biologyproject.R;
+import com.sun.biologyproject.bean.Adress;
 
 /**
  * Created by liangyuyi on 2017/6/19.
  */
-public class ShowMapActivity extends AppCompatActivity implements LocationSource, AMapLocationListener{
+public class ShowMapActivity extends AppCompatActivity implements LocationSource, AMapLocationListener, AMap.OnMapClickListener,GeocodeSearch.OnGeocodeSearchListener {
     private MapView mMapView = null;
     private AMap aMap;
     private UiSettings mUiSettings;
@@ -31,6 +43,13 @@ public class ShowMapActivity extends AppCompatActivity implements LocationSource
     private AMapLocationClient mLocationClient;
     private AMapLocationClientOption mLocationOption;
     private OnLocationChangedListener mListener;
+
+    //位置信息
+    private double latitude;
+    private String locationNew ;
+    private double longitude;
+
+    private TextView adressText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +70,9 @@ public class ShowMapActivity extends AppCompatActivity implements LocationSource
 
         initMapLocationIcon();
 
+        adressText = (TextView)findViewById(R.id.text_adress);
+
+        adressText.setText(Adress.getAdressInstance().getAdress());
     }
     private void initMapLocationIcon(){
         myLocationStyle = new MyLocationStyle();//初始化定位蓝点样式类myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);//连续定位、且将视角移动到地图中心点，定位点依照设备方向旋转，并且会跟随设备移动。（1秒1次定位）如果不设置myLocationType，默认也会执行此种模式。
@@ -62,6 +84,11 @@ public class ShowMapActivity extends AppCompatActivity implements LocationSource
         aMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
         //aMap.getUiSettings().setMyLocationButtonEnabled(true);设置默认定位按钮是否显示，非必需设置。
         aMap.setMyLocationEnabled(true);// 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
+        //设置缩放级别
+        aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
+        // 设置定位监听
+        aMap.setLocationSource(this);
+        aMap.setOnMapClickListener(this);// 对amap添加单击地图事件监听器
     }
     /**
      * 初始化定位，并开始定位
@@ -84,11 +111,13 @@ public class ShowMapActivity extends AppCompatActivity implements LocationSource
         //设置是否允许模拟位置,默认为false，不允许模拟位置
         mLocationOption.setMockEnable(false);
         //设置定位间隔,单位毫秒,默认为2000ms
-        mLocationOption.setInterval(2000);
+        //mLocationOption.setInterval(2000);
         //给定位客户端对象设置定位参数
         mLocationClient.setLocationOption(mLocationOption);
         //启动定位
         mLocationClient.startLocation();
+
+
     }
     @Override
     protected void onDestroy() {
@@ -116,7 +145,7 @@ public class ShowMapActivity extends AppCompatActivity implements LocationSource
     }
 
     /**
-     * 激化定位
+     * 激活定位
      * @param onLocationChangedListener
      */
     @Override
@@ -148,22 +177,71 @@ public class ShowMapActivity extends AppCompatActivity implements LocationSource
             if (aMapLocation.getErrorCode() == 0) {
                 //点击定位按钮 能够将地图的中心移动到定位点
                 mListener.onLocationChanged(aMapLocation);
-                //获取定位信息 //点击定位按钮 能够将地图的中心移动到定位点
-                mListener.onLocationChanged(aMapLocation);
                 //设置缩放级别
-                aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
+                //aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
                 //将地图移动到定位点
-                aMap.moveCamera(CameraUpdateFactory.changeLatLng(new LatLng(aMapLocation.getLatitude(), aMapLocation.getLongitude())));
+                //aMap.moveCamera(CameraUpdateFactory.changeLatLng(new LatLng(aMapLocation.getLatitude(), aMapLocation.getLongitude())));
                 //获取定位信息
                 StringBuffer buffer = new StringBuffer();
-                buffer.append(aMapLocation.getCountry() + ""
-                        + aMapLocation.getProvince() + ""
+                buffer.append(aMapLocation.getProvince() + ""
                         + aMapLocation.getCity() + ""
                         + aMapLocation.getProvince() + ""
                         + aMapLocation.getDistrict() + ""
                         + aMapLocation.getStreet() + ""
                         + aMapLocation.getStreetNum());
+
+                locationNew = buffer.toString();
+                //adressText.setText(locationNew);
+                latitude = aMapLocation.getLatitude();
+                longitude = aMapLocation.getLongitude();
             }
         }
+    }
+
+
+    //地图点击事件
+    @Override
+    public void onMapClick(LatLng latLng) {
+        //点击地图后清理图层插上图标，在将其移动到中心位置
+        aMap.clear();
+        latitude = latLng.latitude;
+        longitude = latLng.longitude;
+        MarkerOptions otMarkerOptions = new MarkerOptions();
+        otMarkerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.location));
+        otMarkerOptions.position(latLng);
+
+        aMap.addMarker(otMarkerOptions);
+        aMap.moveCamera(CameraUpdateFactory.changeLatLng(latLng));
+        Geocoder geocoder;
+        //adressText.setText(aMap.getMyLocation()());
+        //Toast.makeText(getApplicationContext(),aMap.getMyLocation().toString(),Toast.LENGTH_LONG).show();
+        getAddressByLatlng(latLng);
+    }
+
+    private void getAddressByLatlng(LatLng latLng) {
+        GeocodeSearch geocodeSearch = new GeocodeSearch(this);
+        geocodeSearch.setOnGeocodeSearchListener(this);
+        //逆地理编码查询条件：逆地理编码查询的地理坐标点、查询范围、坐标类型。
+        LatLonPoint latLonPoint = new LatLonPoint(latLng.latitude, latLng.longitude);
+        RegeocodeQuery query = new RegeocodeQuery(latLonPoint, 500f, GeocodeSearch.AMAP);
+        //异步查询
+
+        geocodeSearch.getFromLocationAsyn(query);
+    }
+
+    //得到逆地理编码异步查询结果
+    @Override
+    public void onRegeocodeSearched(RegeocodeResult regeocodeResult, int i) {
+        RegeocodeAddress regeocodeAddress = regeocodeResult.getRegeocodeAddress();
+        String formatAddress = regeocodeAddress.getFormatAddress();
+        String simpleAddress = formatAddress.substring(0);
+        adressText.setText(simpleAddress);
+
+        Adress.getAdressInstance().setAdress(simpleAddress);
+    }
+
+    @Override
+    public void onGeocodeSearched(GeocodeResult geocodeResult, int i) {
+
     }
 }
