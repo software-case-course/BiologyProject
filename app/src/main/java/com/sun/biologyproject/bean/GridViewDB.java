@@ -26,6 +26,7 @@ public class GridViewDB {//使用单例模式，避免类被重复创建，消�
 
         titles.add(titles0);
         titles.add(titles1);
+        titles.add(titles2);
         titles.add(titles3);
     }
 
@@ -92,7 +93,10 @@ public class GridViewDB {//使用单例模式，避免类被重复创建，消�
             "水生蠕虫","蠓幼虫","大蚊幼虫","蚋幼虫","水蛭","长角泥甲幼虫","午虻幼虫","涡虫","蚊子幼虫"
     };
     private String[]titles2 = new String[]{
-            "成年甲虫", "水钱", "", "", "", ""
+            "成年甲虫", "水钱",
+            "常见的织网石蚕", "指型织网石蚕", "鱼蛉幼虫", "亚春蜓的幼虫","浅滩甲虫的幼虫","花纹蜻蜓的幼虫",
+            "各式石蝇",
+            "阔翅豆娘","窄翅豆娘","平顶蜉蝣","小鱼形蜉蝣","小型方腮蜉蝣","叉腮蜉蝣"
     };
     private String[]titles3=new String[]{
             "飞毛腿","小龙虾","鱼蛉"," 鼠妇"

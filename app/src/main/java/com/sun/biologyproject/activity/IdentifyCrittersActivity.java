@@ -45,7 +45,8 @@ public class IdentifyCrittersActivity extends Activity{
             //六条腿
             case R.id.sixlegs1:
             case R.id.list3:
-
+                id = 2;
+                break;
             //超过六条腿
             case R.id.morelegs1:
             case R.id.list4:

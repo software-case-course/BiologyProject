@@ -30,6 +30,7 @@ public class GridViewActivity extends AppCompatActivity {
         Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
         str=bundle.getString("id");
+        Log.d("Tag",str);
         id=Integer.parseInt(str);
         choose_one=(GridView)findViewById(R.id.choose_grid);
         choose_one.setNumColumns(2);
