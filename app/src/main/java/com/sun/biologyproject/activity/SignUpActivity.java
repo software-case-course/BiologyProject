@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.sun.biologyproject.R;
 import com.sun.biologyproject.bean.User;
 import com.sun.biologyproject.utils.MyTextUtils;
-import com.sun.biologyproject.utils.ShareUtils;
+import com.sun.biologyproject.utils.SharedUtils;
 import com.sun.biologyproject.utils.ToastUtils;
 
 import cn.bmob.v3.exception.BmobException;
@@ -139,8 +139,8 @@ public class SignUpActivity extends AppCompatActivity {
                 mProgressDialog.cancel();
 
                 if (e == null){
-                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                    ShareUtils.saveLastLoginUserPhone(SignUpActivity.this, user.getMobilePhoneNumber());
+                    Intent intent = new Intent(SignUpActivity.this, MainActivity2.class);
+                    SharedUtils.saveLastLoginUserPhone(SignUpActivity.this, user.getMobilePhoneNumber());
                     startActivity(intent);
                     finish();
                 }else {

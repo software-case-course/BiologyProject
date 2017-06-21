@@ -15,12 +15,12 @@ android {
             storePassword 'android'
         }
     }
-    compileSdkVersion 23
-    buildToolsVersion "24.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.sun.biologyproject"
         minSdkVersion 19
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -38,8 +38,12 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:25.3.0'
     compile files('libs/AMap_Location_V3.4.0_20170427.jar')
-    compile files('libs/Amap_2DMap_V4.2.0_20170209.jar')
     compile files('libs/AMap_Search_V5.0.0_20170309.jar')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.aitangba:swipeback:1.0.2'
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.3'
+    compile 'com.github.pavlospt:circleview:1.3'
+
 }

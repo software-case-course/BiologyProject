@@ -9,6 +9,7 @@ import cn.bmob.v3.datatype.BmobFile;
 public class BiologyImage extends BmobObject {
 
     private String id;
+    private Integer index;//图片的显示顺序
     private String name;//水生生物
     private String imgUrl;//图片的Url
     private BmobFile file;//图片
@@ -19,6 +20,14 @@ public class BiologyImage extends BmobObject {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Integer getIndex() {
+        return index;
+    }
+
+    public void setIndex(Integer index) {
+        this.index = index;
     }
 
     public String getName() {

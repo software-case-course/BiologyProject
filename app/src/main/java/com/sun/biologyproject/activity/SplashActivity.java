@@ -13,7 +13,8 @@ import cn.bmob.v3.BmobUser;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private int delay = 10;
+    // TODO: 2017/6/22 修改时间为1s
+    private int delay = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (user == null){
                     intent = new Intent(SplashActivity.this, LoginActivity.class);
                 }else {
-                    intent = new Intent(SplashActivity.this, MainActivity.class);
+                    intent = new Intent(SplashActivity.this, MainActivity2.class);
                 }
                 startActivity(intent);
                 finish();

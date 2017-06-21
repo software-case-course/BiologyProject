@@ -11,4 +11,17 @@
     <color name="white">#ffffff</color>
     <color name="button_green">#20dca9</color>
     <color name="bg_btn_gray">#bfbfbf</color>
+
+    <color name="colorCutLine">#eeeeee</color>
+
+    <color name="teal">#00796B</color>
+    <color name="brown">#8D6E63</color>
+    <color name="blue">#2196F3</color>
+    <color name="red">#FF0000</color>
+    <color name="grey">#607D8B</color>
+    <color name="orange">#F57C00</color>
+    <color name="black">#101010</color>
+
+    <color name="pink">#fb7e7e</color>
+    <color name="green">#6fd14f</color>
 </resources>

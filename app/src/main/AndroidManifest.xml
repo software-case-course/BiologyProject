@@ -23,6 +23,9 @@
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -43,6 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MainActivity2"/>
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.GridViewActivity" />
         <activity android:name=".activity.SpeciesActivity" />
@@ -56,7 +60,6 @@
         <activity android:name=".activity.MapActivity" />
         <activity android:name=".activity.ToolsActivity" />
         <activity android:name=".activity.ReportActivity" />
-        <activity android:name=".activity.NavigationActivity"></activity>
         <activity android:name=".activity.ShowMapActivity"/>
     </application>
 

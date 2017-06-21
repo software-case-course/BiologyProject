@@ -60,6 +60,7 @@ public class IdentifyCrittersActivity extends Activity{
         Intent intent=new Intent(IdentifyCrittersActivity.this,GridViewActivity.class);
         intent.putExtra("id",String.valueOf(id));
         startActivity(intent);
+        finish();
     }
 
 }

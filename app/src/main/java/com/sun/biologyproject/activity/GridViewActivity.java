@@ -44,6 +44,7 @@ public class GridViewActivity extends AppCompatActivity {
                 intent.putExtra("firstId",str);
                 intent.putExtra("secondId",String.valueOf(position));
                 startActivity(intent);
+                finish();
             }
         });
     }

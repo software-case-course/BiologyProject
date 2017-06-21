@@ -11,17 +11,14 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.sun.biologyproject.R;
 import com.sun.biologyproject.bean.User;
 import com.sun.biologyproject.utils.MyTextUtils;
-import com.sun.biologyproject.utils.ShareUtils;
+import com.sun.biologyproject.utils.SharedUtils;
 import com.sun.biologyproject.utils.ToastUtils;
 
-import cn.bmob.v3.BmobConstants;
-import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -53,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         tv_password_tip = (TextView) findViewById(R.id.tv_password_tip);
 
         et_account = (EditText) findViewById(R.id.et_account);
-        et_account.setText(ShareUtils.getLastLoginUserPhone(this));
+        et_account.setText(SharedUtils.getLastLoginUserPhone(this));
         et_account.addTextChangedListener(new MyTextWatcher(TYPE_EDIT_ACCOUNT));
 
         et_password = (EditText) findViewById(R.id.et_password);
@@ -98,8 +95,8 @@ public class LoginActivity extends AppCompatActivity {
                 mProgtessDialog.cancel();
                 if (e == null){
                     ToastUtils.showShortToast(LoginActivity.this, "登录成功");
-                    ShareUtils.saveLastLoginUserPhone(LoginActivity.this, user.getMobilePhoneNumber());
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    SharedUtils.saveLastLoginUserPhone(LoginActivity.this, user.getMobilePhoneNumber());
+                    Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
                     startActivity(intent);
                     finish();
                 }else {

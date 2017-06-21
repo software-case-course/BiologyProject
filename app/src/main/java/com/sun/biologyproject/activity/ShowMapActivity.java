@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aitangba.swipeback.SwipeBackActivity;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
@@ -32,7 +33,7 @@ import com.sun.biologyproject.bean.Adress;
 /**
  * Created by liangyuyi on 2017/6/19.
  */
-public class ShowMapActivity extends AppCompatActivity implements LocationSource, AMapLocationListener, AMap.OnMapClickListener,GeocodeSearch.OnGeocodeSearchListener {
+public class ShowMapActivity extends SwipeBackActivity implements LocationSource, AMapLocationListener, AMap.OnMapClickListener,GeocodeSearch.OnGeocodeSearchListener {
     private MapView mMapView = null;
     private AMap aMap;
     private UiSettings mUiSettings;

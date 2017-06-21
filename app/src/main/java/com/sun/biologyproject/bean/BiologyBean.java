@@ -8,6 +8,15 @@ public class BiologyBean {
     private String name;//生物名字
     private String id;//对应的Id
     private Integer score;//水质量的评分系数
+    private String environment;//生活的环境
+
+    public String getEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
 
     public String getName() {
         return name;
@@ -33,4 +42,12 @@ public class BiologyBean {
         this.score = score;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof BiologyBean){
+            BiologyBean temp = (BiologyBean) obj;
+            return id.equals(temp.getId());
+        }
+        return false;
+    }
 }

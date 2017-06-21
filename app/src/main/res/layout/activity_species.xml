@@ -8,6 +8,7 @@
 
 
     <GridView
+        android:visibility="gone"
         android:layout_below="@+id/title"
         android:fadeScrollbars="true"
         android:id="@+id/show_grid"
@@ -25,21 +26,79 @@
         >
     </GridView>
 
+    <RelativeLayout
+        android:id="@+id/relative_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorCutLine"/>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="生物"
+            android:textSize="@dimen/titleTextSize"/>
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/back_img_width"
+            android:layout_height="@dimen/back_img_height"
+            android:src="@drawable/back"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_title"
+        android:layout_above="@+id/linearBottom">
+        <LinearLayout
+            android:id="@+id/linearContentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
-        android:id="@+id/buttonLayout"
+        android:id="@+id/linearBottom"
         android:layout_alignParentBottom="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="能生存在xxx的生存环境中"
-            android:id="@+id/textView" />
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/about"/>
+            <TextView
+                android:id="@+id/tv_environment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/titleTextSize"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
         <Button
-            android:id="@+id/toreport"
+            android:id="@+id/btn_collect"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn_green"
+            android:text="@string/btn_text_collect"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"/>
     </LinearLayout>
 </RelativeLayout>

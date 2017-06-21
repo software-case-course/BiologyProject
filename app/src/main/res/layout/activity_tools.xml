@@ -2,49 +2,181 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/blue">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:src="@drawable/tool"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"/>
 
-    <TextView
-        android:layout_width = "fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="你所选择的工具有"
-        />
-    <CheckBox
-        android:layout_width = "fill_parent"
-        android:layout_height="wrap_content"
-        android:text="网"
-        android:id="@+id/net"
-        />
-    <CheckBox
-        android:layout_width = "fill_parent"
-        android:layout_height="wrap_content"
-        android:text="水桶"
-        android:id="@+id/bucket"
-        />
-    <CheckBox
-        android:layout_width = "fill_parent"
-        android:layout_height="wrap_content"
-        android:text="杯子"
-        android:id="@+id/cup"
-        />
-    <CheckBox
-        android:layout_width = "fill_parent"
-        android:layout_height="wrap_content"
-        android:text="箱子"
-        android:id="@+id/box"
-        />
-    <CheckBox
-        android:layout_width = "fill_parent"
-        android:layout_height="wrap_content"
-        android:text="手套"
-        android:id="@+id/gloves"
-        />
+        <TextView
+            android:layout_width = "wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:text="选择你有的工具"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            />
+        
+    </LinearLayout>
+
+    <com.sun.biologyproject.widget.CircleCheckBox
+        android:id="@+id/cb_net"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:paddingLeft="5dp"
+        app:borderThickness="2dp"
+        app:circleBorderColor="#00CFAD"
+        app:innerCircleColor="#00CFAD"
+        app:innerCircleRadius="14dp"
+        app:outerCircleColor="#6400CFAD"
+        app:outerCircleRadius="6dp"
+        app:showOuterCircle="true"
+        app:textColor="#000000"
+        app:textLeftPadding="20dp"
+        app:textSize="16dp"
+        app:tickColor="#ffffff"
+        app:tickThickness="1dp"
+        app:text="@string/net" />
+
+    <com.sun.biologyproject.widget.CircleCheckBox
+        android:id="@+id/cb_bucket"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:paddingLeft="5dp"
+        app:borderThickness="2dp"
+        app:circleBorderColor="#00CFAD"
+        app:innerCircleColor="#00CFAD"
+        app:innerCircleRadius="14dp"
+        app:outerCircleColor="#6400CFAD"
+        app:outerCircleRadius="6dp"
+        app:showOuterCircle="true"
+        app:textColor="#000000"
+        app:textLeftPadding="20dp"
+        app:textSize="16dp"
+        app:tickColor="#ffffff"
+        app:tickThickness="1dp"
+        app:text="@string/bucket" />
+
+    <com.sun.biologyproject.widget.CircleCheckBox
+        android:id="@+id/cb_cup"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:paddingLeft="5dp"
+        app:borderThickness="2dp"
+        app:circleBorderColor="#00CFAD"
+        app:innerCircleColor="#00CFAD"
+        app:innerCircleRadius="14dp"
+        app:outerCircleColor="#6400CFAD"
+        app:outerCircleRadius="6dp"
+        app:showOuterCircle="true"
+        app:textColor="#000000"
+        app:textLeftPadding="20dp"
+        app:textSize="16dp"
+        app:tickColor="#ffffff"
+        app:tickThickness="1dp"
+        app:text="@string/cup" />
+
+    <com.sun.biologyproject.widget.CircleCheckBox
+        android:id="@+id/cb_box"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:paddingLeft="5dp"
+        app:borderThickness="2dp"
+        app:circleBorderColor="#00CFAD"
+        app:innerCircleColor="#00CFAD"
+        app:innerCircleRadius="14dp"
+        app:outerCircleColor="#6400CFAD"
+        app:outerCircleRadius="6dp"
+        app:showOuterCircle="true"
+        app:textColor="#000000"
+        app:textLeftPadding="20dp"
+        app:textSize="16dp"
+        app:tickColor="#ffffff"
+        app:tickThickness="1dp"
+        app:text="@string/box" />
+
+    <com.sun.biologyproject.widget.CircleCheckBox
+        android:id="@+id/cb_gloves"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:paddingLeft="5dp"
+        app:borderThickness="2dp"
+        app:circleBorderColor="#00CFAD"
+        app:innerCircleColor="#00CFAD"
+        app:innerCircleRadius="14dp"
+        app:outerCircleColor="#6400CFAD"
+        app:outerCircleRadius="6dp"
+        app:showOuterCircle="true"
+        app:textColor="#000000"
+        app:textLeftPadding="20dp"
+        app:textSize="16dp"
+        app:tickColor="#ffffff"
+        app:tickThickness="1dp"
+        app:text="@string/gloves" />
+
     <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_collect"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="提交信息"
-        />
+        android:background="@drawable/bg_btn_green"
+        android:text="@string/collect"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"/>
+
+
+
+
+    <!--<CheckBox-->
+        <!--android:layout_width = "fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="网"-->
+        <!--android:id="@+id/net"-->
+        <!--/>-->
+    <!--<CheckBox-->
+        <!--android:layout_width = "fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="水桶"-->
+        <!--android:id="@+id/bucket"-->
+        <!--/>-->
+    <!--<CheckBox-->
+        <!--android:layout_width = "fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="杯子"-->
+        <!--android:id="@+id/cup"-->
+        <!--/>-->
+    <!--<CheckBox-->
+        <!--android:layout_width = "fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="箱子"-->
+        <!--android:id="@+id/box"-->
+        <!--/>-->
+    <!--<CheckBox-->
+        <!--android:layout_width = "fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="手套"-->
+        <!--android:id="@+id/gloves"-->
+        <!--/>-->
+    <!--<Button-->
+        <!--android:id="@+id/submit"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="提交信息"-->
+        <!--/>-->
 </LinearLayout>

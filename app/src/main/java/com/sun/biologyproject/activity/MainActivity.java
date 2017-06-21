@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-
         Location();//定位
     }
 
@@ -139,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
         };
 
     };
+
     public void Location() {
         // TODO Auto-generated method stub
         try {

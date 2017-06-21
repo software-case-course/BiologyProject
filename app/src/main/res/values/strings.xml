@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">BiologyProject</string>
+    <string name="project_name">水生生物识别</string>
 
     <string name="copy_right">Copyright @2017 水生生物采集</string>
 
@@ -19,5 +20,15 @@
     <string name="sign_out">注销账号</string>
 
     <string name="setting">设置</string>
+
+    <string name="btn_text_collect">没错，就是这个生物啦</string>
+    <string name="collect">开始收集</string>
+    <string name="course">查看流程</string>
+
+    <string name="net">捕抓网</string>
+    <string name="bucket">水桶</string>
+    <string name="cup">杯子</string>
+    <string name="box">箱子</string>
+    <string name="gloves">手套</string>
 
 </resources>

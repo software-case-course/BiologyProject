@@ -11,12 +11,13 @@ import com.sun.biologyproject.bean.User;
  * Created by SUN on 2017/5/17
  */
 
-public class ShareUtils {
+public class SharedUtils {
     private static String SHARE_TABLE_NAME = "BiologyProject";
 
     public static final String USER_PHONE = "user_phone";
     public static final String USER_NAME = "user_name";
     public static final String LAST_USER_PHONE = "last_user_phone";
+    public static final String BIOLOGY_LIST = "BIOLOGY_LIST";
 
     public static final String MY_TOOLS = "my_tools";//收集水生生物的工具
 
@@ -95,4 +96,5 @@ public class ShareUtils {
     public static String readMyTools(Context context){
         return readString(context, MY_TOOLS, "");
     }
+
 }
