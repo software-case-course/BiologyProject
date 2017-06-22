@@ -201,6 +201,7 @@ public class ReportActivity extends Activity{
             @Override
             public void done(String s, BmobException e) {
                 if (e == null){
+                    MainApplication.collectList.clear();
                     ToastUtils.showShortToast(ReportActivity.this, "上传成功！");
                 }else {
                     ToastUtils.showShortToast(ReportActivity.this, s);

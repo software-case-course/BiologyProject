@@ -8,7 +8,7 @@ import cn.bmob.v3.datatype.BmobDate;
 /**
  * Created by SUN on 2017/6/21.
  */
-public class RecordBean extends BmobObject {
+public class RecordBean extends BmobObject{
 
     private String userName;//属于哪个用户
     private String watersName;//水域名称

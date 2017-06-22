@@ -2,14 +2,17 @@ package com.sun.biologyproject.fragment;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.sun.biologyproject.R;
+import com.sun.biologyproject.activity.ShowRecordActivity;
 import com.sun.biologyproject.adapter.RecordListViewAdapter;
 import com.sun.biologyproject.bean.RecordBean;
 
@@ -34,6 +37,15 @@ public class RecordFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View contentView = inflater.inflate(R.layout.record_fragment_layout, null);
         mLvShowRecord = (ListView) contentView.findViewById(R.id.lv_showRecord);
+        mLvShowRecord.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                RecordBean bean = mAdapter.getItem(i);
+                Intent intent = new Intent(getActivity(), ShowRecordActivity.class);
+                intent.putExtra("id", bean.getObjectId());
+                startActivity(intent);
+            }
+        });
         mAdapter = new RecordListViewAdapter(getActivity());
         mLvShowRecord.setAdapter(mAdapter);
         return contentView;
